@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_beauty_service_manager,beauty.service.manager,model_beauty_salon_service,beauty_salon.group_beauty_manager,1,1,1,1
+access_beauty_service_master,beauty.service.master,model_beauty_salon_service,beauty_salon.group_beauty_master,1,0,0,0
+access_beauty_master_manager,beauty.master.manager,model_beauty_salon_master,beauty_salon.group_beauty_manager,1,1,1,1
+access_beauty_master_master,beauty.master.master,model_beauty_salon_master,beauty_salon.group_beauty_master,1,0,0,0
+access_beauty_client_manager,beauty.client.manager,model_beauty_salon_client,beauty_salon.group_beauty_manager,1,1,1,1
+access_beauty_client_master,beauty.client.master,model_beauty_salon_client,beauty_salon.group_beauty_master,1,0,0,0
+access_beauty_appointment_manager,beauty.appointment.manager,model_beauty_salon_appointment,beauty_salon.group_beauty_manager,1,1,1,1
+access_beauty_appointment_master,beauty.appointment.master,model_beauty_salon_appointment,beauty_salon.group_beauty_master,1,1,0,0
+access_beauty_bonus_wizard_manager,beauty.bonus.wizard.manager,model_beauty_salon_bonus_wizard,beauty_salon.group_beauty_manager,1,1,1,1

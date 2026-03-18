@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_beauty_appointment_calendar" model="ir.ui.view">
+        <field name="name">beauty.salon.appointment.calendar</field>
+        <field name="model">beauty.salon.appointment</field>
+        <field name="arch" type="xml">
+            <calendar string="Appointments" date_start="datetime_start" date_stop="datetime_end" color="master_id" event_open_popup="true" quick_create="0">
+                <field name="client_id" avatar_field="image_128"/>
+                <field name="master_id"/>
+                <field name="total_amount" widget="monetary"/>
+                <field name="state" filters="1"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="view_beauty_appointment_list" model="ir.ui.view">
+        <field name="name">beauty.salon.appointment.list</field>
+        <field name="model">beauty.salon.appointment</field>
+        <field name="arch" type="xml">
+            <list decoration-info="state == 'draft'" decoration-success="state == 'done'">
+                <field name="name"/>
+                <field name="client_id"/>
+                <field name="master_id"/>
+                <field name="datetime_start"/>
+                <field name="currency_id" column_invisible="True"/>
+                <field name="total_amount" widget="monetary" sum="Total"/>
+                <field name="state" widget="badge" decoration-info="state == 'draft'" decoration-success="state == 'done'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_beauty_appointment_form" model="ir.ui.view">
+        <field name="name">beauty.salon.appointment.form</field>
+        <field name="model">beauty.salon.appointment</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_confirm" string="Confirm" type="object" invisible="state != 'draft'" class="oe_highlight"/>
+                    <button name="action_done" string="Mark as Done" type="object" invisible="state != 'confirmed'" class="oe_highlight"/>
+                    <button name="action_cancel" string="Cancel" type="object" invisible="state not in ['draft', 'confirmed']"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,done"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group string="Participants">
+                            <field name="client_id"/>
+                            <field name="master_id"/>
+                            <field name="service_ids" widget="many2many_tags"/>
+                        </group>
+                        <group string="Schedule &amp; Finances">
+                            <field name="datetime_start"/>
+                            <field name="datetime_end"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="total_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <field name="master_bonus" widget="monetary" readonly="1"/>
+                        </group>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_beauty_appointment_pivot" model="ir.ui.view">
+        <field name="name">beauty.salon.appointment.pivot</field>
+        <field name="model">beauty.salon.appointment</field>
+        <field name="arch" type="xml">
+            <pivot string="Appointments Analysis" display_quantity="1">
+                <field name="datetime_start" type="row" interval="month"/>
+                <field name="master_id" type="row"/>
+                <field name="total_amount" type="measure"/>
+                <field name="master_bonus" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_beauty_appointment_graph" model="ir.ui.view">
+        <field name="name">beauty.salon.appointment.graph</field>
+        <field name="model">beauty.salon.appointment</field>
+        <field name="arch" type="xml">
+            <graph string="Appointments Analysis" type="bar">
+                <field name="master_id"/>
+                <field name="total_amount" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_beauty_master_list" model="ir.ui.view">
+        <field name="name">beauty.salon.master.list</field>
+        <field name="model">beauty.salon.master</field>
+        <field name="arch" type="xml">
+            <list string="Masters">
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="bonus_percentage"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_beauty_master_form" model="ir.ui.view">
+        <field name="name">beauty.salon.master.form</field>
+        <field name="model">beauty.salon.master</field>
+        <field name="arch" type="xml">
+            <form string="Master">
+                <sheet>
+                    <field name="image_1920" widget="image" class="oe_avatar" options="{'preview_image': 'image_128'}"/>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" string="Master Name"/>
+                        <h1><field name="name" placeholder="e.g. Anna Johnson"/></h1>
+                    </div>
+                    <group>
+                        <group string="Contact Info">
+                            <field name="phone" widget="phone"/>
+                            <field name="email" widget="email"/>
+                            <field name="user_id"/>
+                        </group>
+                        <group string="Professional Info">
+                            <field name="bonus_percentage"/>
+                            <field name="specialty_ids" widget="many2many_tags" placeholder="Select services..."/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_beauty_client_list" model="ir.ui.view">
+        <field name="name">beauty.salon.client.list</field>
+        <field name="model">beauty.salon.client</field>
+        <field name="arch" type="xml">
+            <list string="Clients">
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="last_visit_date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_beauty_client_form" model="ir.ui.view">
+        <field name="name">beauty.salon.client.form</field>
+        <field name="model">beauty.salon.client</field>
+        <field name="arch" type="xml">
+            <form string="Client">
+                <sheet>
+                    <field name="image_1920" widget="image" class="oe_avatar" options="{'preview_image': 'image_128'}"/>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" string="Client Name"/>
+                        <h1><field name="name" placeholder="e.g. John Doe"/></h1>
+                    </div>
+                    <group>
+                        <group string="Contacts">
+                            <field name="phone" widget="phone"/>
+                            <field name="email" widget="email"/>
+                        </group>
+                        <group string="Statistics">
+                            <field name="last_visit_date" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Appointments History" name="appointments">
+                            <field name="appointment_ids" readonly="1">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="datetime_start"/>
+                                    <field name="master_id"/>
+                                    <field name="state" widget="badge" decoration-success="state == 'done'"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_beauty_service_list" model="ir.ui.view">
+        <field name="name">beauty.salon.service.list</field>
+        <field name="model">beauty.salon.service</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="currency_id" column_invisible="True"/>
+                <field name="price" widget="monetary"/>
+                <field name="duration" widget="float_time"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_beauty_service_form" model="ir.ui.view">
+        <field name="name">beauty.salon.service.form</field>
+        <field name="model">beauty.salon.service</field>
+        <field name="arch" type="xml">
+            <form string="Service">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" string="Service Name"/>
+                        <h1><field name="name" placeholder="e.g. Haircut"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="currency_id" invisible="1"/> <field name="price" widget="monetary"/>
+                            <field name="duration"/>
+                        </group>
+                        <group>
+                            <field name="active" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description" placeholder="Describe the service..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_beauty_appointment" model="ir.actions.act_window">
+        <field name="name">Appointments</field>
+        <field name="res_model">beauty.salon.appointment</field>
+        <field name="view_mode">calendar,list,form,pivot,graph</field>
+    </record>
+
+    <record id="action_beauty_master" model="ir.actions.act_window">
+        <field name="name">Masters</field>
+        <field name="res_model">beauty.salon.master</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_beauty_client" model="ir.actions.act_window">
+        <field name="name">Clients</field>
+        <field name="res_model">beauty.salon.client</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_beauty_service" model="ir.actions.act_window">
+        <field name="name">Services</field>
+        <field name="res_model">beauty.salon.service</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_beauty_root" name="Beauty Salon" sequence="10" web_icon="beauty_salon,static/description/icon.png"/>
+    <menuitem id="menu_beauty_appointment" name="Appointments" parent="menu_beauty_root" action="action_beauty_appointment" sequence="10"/>
+    <menuitem id="menu_beauty_client" name="Clients" parent="menu_beauty_root" action="action_beauty_client" sequence="20"/>
+    
+    <menuitem id="menu_beauty_catalog" name="Catalog" parent="menu_beauty_root" sequence="30"/>
+    <menuitem id="menu_beauty_master" name="Masters" parent="menu_beauty_catalog" action="action_beauty_master" sequence="10"/>
+    <menuitem id="menu_beauty_service" name="Services" parent="menu_beauty_catalog" action="action_beauty_service" sequence="20"/>
+
+</odoo>

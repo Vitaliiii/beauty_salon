@@ -1,0 +1,720 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* beauty_salon
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-18 16:06+0000\n"
+"PO-Revision-Date: 2026-03-18 16:06+0000\n"
+"Last-Translator: \n"
+"Language-Team: Ukrainian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. module: beauty_salon
+#: model:ir.module.category,description:beauty_salon.module_category_beauty_salon
+msgid "Access levels for Beauty Salon module"
+msgstr "Рівні доступу для модуля Салон Краси"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__message_needaction
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__message_needaction
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__message_needaction
+msgid "Action Needed"
+msgstr "Необхідна дія"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__active
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_service__active
+msgid "Active"
+msgstr "Активно"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__activity_ids
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__activity_ids
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__activity_ids
+msgid "Activities"
+msgstr "Дії"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__activity_exception_decoration
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__activity_exception_decoration
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Оформлення виключення дії"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__activity_state
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__activity_state
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__activity_state
+msgid "Activity State"
+msgstr "Стан дії"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__activity_type_icon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__activity_type_icon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Іконка типу дії"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_appointment_form
+msgid "Appointment"
+msgstr "Запис на прийом"
+
+#. module: beauty_salon
+#: model:ir.actions.act_window,name:beauty_salon.action_beauty_appointment
+#: model:ir.ui.menu,name:beauty_salon.menu_beauty_appointment
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_appointment_calendar
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_appointment_list
+msgid "Appointments"
+msgstr "Записи на прийом"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_appointment_graph
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_appointment_pivot
+msgid "Appointments Analysis"
+msgstr "Аналіз записів"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__appointment_ids
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_client_form
+msgid "Appointments History"
+msgstr "Історія візитів"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__message_attachment_count
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__message_attachment_count
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__message_attachment_count
+msgid "Attachment Count"
+msgstr "Кількість прикріплень"
+
+#. module: beauty_salon
+#: model:ir.module.category,name:beauty_salon.module_category_beauty_salon
+#: model:ir.ui.menu,name:beauty_salon.menu_beauty_root
+msgid "Beauty Salon"
+msgstr "Салон Краси"
+
+#. module: beauty_salon
+#: model:ir.model,name:beauty_salon.model_beauty_salon_appointment
+msgid "Beauty Salon Appointment"
+msgstr "Запис у Салон Краси"
+
+#. module: beauty_salon
+#: model:ir.model,name:beauty_salon.model_beauty_salon_client
+msgid "Beauty Salon Client"
+msgstr "Клієнт Салону Краси"
+
+#. module: beauty_salon
+#: model:ir.model,name:beauty_salon.model_beauty_salon_master
+msgid "Beauty Salon Master"
+msgstr "Майстер Салону Краси"
+
+#. module: beauty_salon
+#: model:res.groups.privilege,name:beauty_salon.privilege_beauty_salon
+msgid "Beauty Salon Privileges"
+msgstr "Привілеї Салону Краси"
+
+#. module: beauty_salon
+#: model:ir.model,name:beauty_salon.model_beauty_salon_service
+msgid "Beauty Salon Service"
+msgstr "Послуга Салону Краси"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__bonus_percentage
+msgid "Bonus Percentage (%)"
+msgstr "Відсоток бонусу (%)"
+
+#. module: beauty_salon
+#. odoo-python
+#: code:addons/beauty_salon/models/master.py:0
+msgid "Bonus percentage must be between 0 and 100!"
+msgstr "Відсоток бонусу повинен бути від 0 до 100!"
+
+#. module: beauty_salon
+#: model:ir.actions.act_window,name:beauty_salon.action_beauty_bonus_wizard
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_bonus_wizard_form
+msgid "Calculate Bonuses"
+msgstr "Розрахувати бонуси"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_appointment_form
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_bonus_wizard_form
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. module: beauty_salon
+#: model:ir.model.fields.selection,name:beauty_salon.selection__beauty_salon_appointment__state__cancelled
+msgid "Cancelled"
+msgstr "Скасовано"
+
+#. module: beauty_salon
+#: model:ir.ui.menu,name:beauty_salon.menu_beauty_catalog
+msgid "Catalog"
+msgstr "Довідники"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__client_id
+#: model_terms:ir.ui.view,arch_db:beauty_salon.report_master_bonus_template
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_client_form
+msgid "Client"
+msgstr "Клієнт"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_client_form
+msgid "Client Name"
+msgstr "Ім'я клієнта"
+
+#. module: beauty_salon
+#: model:ir.actions.act_window,name:beauty_salon.action_beauty_client
+#: model:ir.ui.menu,name:beauty_salon.menu_beauty_client
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_client_list
+msgid "Clients"
+msgstr "Клієнти"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_appointment_form
+msgid "Confirm"
+msgstr "Підтвердити"
+
+#. module: beauty_salon
+#: model:ir.model.fields.selection,name:beauty_salon.selection__beauty_salon_appointment__state__confirmed
+msgid "Confirmed"
+msgstr "Підтверджено"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_master_form
+msgid "Contact Info"
+msgstr "Контактна інформація"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_client_form
+msgid "Contacts"
+msgstr "Контакти"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__create_uid
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_bonus_wizard__create_uid
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__create_uid
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__create_uid
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_service__create_uid
+msgid "Created by"
+msgstr "Створив(ла)"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__create_date
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_bonus_wizard__create_date
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__create_date
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__create_date
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_service__create_date
+msgid "Created on"
+msgstr "Створено"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.report_master_bonus_template
+msgid "Date"
+msgstr "Дата"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_service_form
+msgid "Describe the service..."
+msgstr "Опишіть послугу..."
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_service__description
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_service_form
+msgid "Description"
+msgstr "Опис"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__display_name
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_bonus_wizard__display_name
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__display_name
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__display_name
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_service__display_name
+msgid "Display Name"
+msgstr "Відображувана назва"
+
+#. module: beauty_salon
+#: model:ir.model.fields.selection,name:beauty_salon.selection__beauty_salon_appointment__state__done
+msgid "Done"
+msgstr "Завершено"
+
+#. module: beauty_salon
+#: model:ir.model.fields.selection,name:beauty_salon.selection__beauty_salon_appointment__state__draft
+msgid "Draft"
+msgstr "Чернетка"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_service__duration
+msgid "Duration (Hours)"
+msgstr "Тривалість (Години)"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__email
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__email
+msgid "Email"
+msgstr "Ел. пошта"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_bonus_wizard__date_end
+msgid "End Date"
+msgstr "Дата закінчення"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__datetime_end
+msgid "End Time"
+msgstr "Час закінчення"
+
+#. module: beauty_salon
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_service__duration
+msgid "Expected duration of the service in hours."
+msgstr "Очікувана тривалість послуги в годинах."
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__message_follower_ids
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__message_follower_ids
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__message_follower_ids
+msgid "Followers"
+msgstr "Підписники"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__message_partner_ids
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__message_partner_ids
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Підписники (Партнери)"
+
+#. module: beauty_salon
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_appointment__activity_type_icon
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_client__activity_type_icon
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_master__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Іконка Font Awesome, напр. fa-tasks"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__name
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__name
+msgid "Full Name"
+msgstr "Повне ім'я"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_bonus_wizard_form
+msgid "Generate PDF"
+msgstr "Згенерувати PDF"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__has_message
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__has_message
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__has_message
+msgid "Has Message"
+msgstr "Є повідомлення"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__id
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_bonus_wizard__id
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__id
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__id
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_service__id
+msgid "ID"
+msgstr "ID"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__activity_exception_icon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__activity_exception_icon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__activity_exception_icon
+msgid "Icon"
+msgstr "Іконка"
+
+#. module: beauty_salon
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_appointment__activity_exception_icon
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_client__activity_exception_icon
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_master__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Іконка для вказівки на виключення дії."
+
+#. module: beauty_salon
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_appointment__message_needaction
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_client__message_needaction
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_master__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Якщо позначено, нові повідомлення вимагають вашої уваги."
+
+#. module: beauty_salon
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_appointment__message_has_error
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_client__message_has_error
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_master__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Якщо позначено, деякі повідомлення мають помилку доставки."
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__image_1920
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__image_1920
+msgid "Image"
+msgstr "Зображення"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__image_1024
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__image_1024
+msgid "Image 1024"
+msgstr "Зображення 1024"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__image_128
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__image_128
+msgid "Image 128"
+msgstr "Зображення 128"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__image_256
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__image_256
+msgid "Image 256"
+msgstr "Зображення 256"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__image_512
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__image_512
+msgid "Image 512"
+msgstr "Зображення 512"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__message_is_follower
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__message_is_follower
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__message_is_follower
+msgid "Is Follower"
+msgstr "Є підписником"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__write_uid
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_bonus_wizard__write_uid
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__write_uid
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__write_uid
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_service__write_uid
+msgid "Last Updated by"
+msgstr "Востаннє оновив"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__write_date
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_bonus_wizard__write_date
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__write_date
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__write_date
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_service__write_date
+msgid "Last Updated on"
+msgstr "Останнє оновлення"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__last_visit_date
+msgid "Last Visit"
+msgstr "Останній візит"
+
+#. module: beauty_salon
+#: model:res.groups,name:beauty_salon.group_beauty_manager
+msgid "Manager"
+msgstr "Менеджер"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_appointment_form
+msgid "Mark as Done"
+msgstr "Виконано"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__master_id
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_bonus_wizard__master_id
+#: model:res.groups,name:beauty_salon.group_beauty_master
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_master_form
+msgid "Master"
+msgstr "Майстер"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__master_bonus
+#: model_terms:ir.ui.view,arch_db:beauty_salon.report_master_bonus_template
+msgid "Master Bonus"
+msgstr "Бонус майстра"
+
+#. module: beauty_salon
+#: model:ir.model,name:beauty_salon.model_beauty_salon_bonus_wizard
+msgid "Master Bonus Calculation Wizard"
+msgstr "Помічник розрахунку бонусів"
+
+#. module: beauty_salon
+#: model:ir.actions.report,name:beauty_salon.action_report_master_bonus
+msgid "Master Bonus Report"
+msgstr "Звіт по бонусах майстра"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.report_master_bonus_template
+msgid "Master Bonus Report:"
+msgstr "Звіт по бонусах майстра:"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_master_form
+msgid "Master Name"
+msgstr "Ім'я майстра"
+
+#. module: beauty_salon
+#: model:ir.actions.act_window,name:beauty_salon.action_beauty_master
+#: model:ir.ui.menu,name:beauty_salon.menu_beauty_master
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_master_list
+msgid "Masters"
+msgstr "Майстри"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__message_has_error
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__message_has_error
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__message_has_error
+msgid "Message Delivery error"
+msgstr "Помилка доставки повідомлення"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__message_ids
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__message_ids
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__message_ids
+msgid "Messages"
+msgstr "Повідомлення"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__my_activity_date_deadline
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__my_activity_date_deadline
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Дедлайн моєї дії"
+
+#. module: beauty_salon
+#. odoo-python
+#: code:addons/beauty_salon/models/appointment.py:0
+msgid "New"
+msgstr "Новий"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__activity_date_deadline
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__activity_date_deadline
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Дедлайн наступної дії"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__activity_summary
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__activity_summary
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__activity_summary
+msgid "Next Activity Summary"
+msgstr "Резюме наступної дії"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__activity_type_id
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__activity_type_id
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__activity_type_id
+msgid "Next Activity Type"
+msgstr "Тип наступної дії"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__message_needaction_counter
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__message_needaction_counter
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Кількість дій"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__message_has_error_counter
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__message_has_error_counter
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__message_has_error_counter
+msgid "Number of errors"
+msgstr "Кількість помилок"
+
+#. module: beauty_salon
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_appointment__message_needaction_counter
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_client__message_needaction_counter
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_master__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Кількість повідомлень, які потребують дії"
+
+#. module: beauty_salon
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_appointment__message_has_error_counter
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_client__message_has_error_counter
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_master__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Кількість повідомлень з помилкою доставки"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_appointment_form
+msgid "Participants"
+msgstr "Учасники"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.report_master_bonus_template
+msgid "Period: from"
+msgstr "Період: з"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__phone
+msgid "Phone"
+msgstr "Телефон"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__phone
+msgid "Phone Number"
+msgstr "Номер телефону"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_service__price
+msgid "Price"
+msgstr "Ціна"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_master_form
+msgid "Professional Info"
+msgstr "Професійна інформація"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__name
+msgid "Reference"
+msgstr "Номер"
+
+#. module: beauty_salon
+#: model:ir.ui.menu,name:beauty_salon.menu_beauty_bonus_wizard
+msgid "Reporting (Bonuses)"
+msgstr "Звітність (Бонуси)"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_appointment_form
+msgid "Reset to Draft"
+msgstr "У чернетку"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__activity_user_id
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_client__activity_user_id
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__activity_user_id
+msgid "Responsible User"
+msgstr "Відповідальний користувач"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_appointment_form
+msgid "Schedule & Finances"
+msgstr "Розклад та Фінанси"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_master_form
+msgid "Select services..."
+msgstr "Оберіть послуги..."
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_service_form
+msgid "Service"
+msgstr "Послуга"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_service__name
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_service_form
+msgid "Service Name"
+msgstr "Назва послуги"
+
+#. module: beauty_salon
+#: model:ir.actions.act_window,name:beauty_salon.action_beauty_service
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__service_ids
+#: model:ir.ui.menu,name:beauty_salon.menu_beauty_service
+#: model_terms:ir.ui.view,arch_db:beauty_salon.report_master_bonus_template
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_service_list
+msgid "Services"
+msgstr "Послуги"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__specialty_ids
+msgid "Specialties (Services)"
+msgstr "Спеціалізації (Послуги)"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_bonus_wizard__date_start
+msgid "Start Date"
+msgstr "Дата початку"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__datetime_start
+msgid "Start Time"
+msgstr "Час початку"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_client_form
+msgid "Statistics"
+msgstr "Статистика"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__state
+msgid "Status"
+msgstr "Статус"
+
+#. module: beauty_salon
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_appointment__activity_state
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_client__activity_state
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_master__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Статус на основі дій\n"
+"Прострочено: Дедлайн вже минув\n"
+"Сьогодні: Дата дії сьогодні\n"
+"Заплановано: Майбутні дії."
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_master__user_id
+msgid "System User"
+msgstr "Користувач системи"
+
+#. module: beauty_salon
+#. odoo-python
+#: code:addons/beauty_salon/models/appointment.py:0
+msgid "This master is already booked for the selected time period!"
+msgstr "Цей майстер вже заброньований на обраний час!"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_appointment_list
+msgid "Total"
+msgstr "Разом"
+
+#. module: beauty_salon
+#: model:ir.model.fields,field_description:beauty_salon.field_beauty_salon_appointment__total_amount
+#: model_terms:ir.ui.view,arch_db:beauty_salon.report_master_bonus_template
+msgid "Total Amount"
+msgstr "Загальна сума"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.report_master_bonus_template
+msgid "Total Bonus to Pay:"
+msgstr "Загальний бонус до виплати:"
+
+#. module: beauty_salon
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_appointment__activity_exception_decoration
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_client__activity_exception_decoration
+#: model:ir.model.fields,help:beauty_salon.field_beauty_salon_master__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Тип виключення дії на записі."
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.report_master_bonus_template
+msgid "UAH"
+msgstr "ГРН"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_master_form
+msgid "e.g. Anna Johnson"
+msgstr "напр., Ганна Коваленко"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_service_form
+msgid "e.g. Haircut"
+msgstr "напр., Стрижка"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.view_beauty_client_form
+msgid "e.g. John Doe"
+msgstr "напр., Іван Петренко"
+
+#. module: beauty_salon
+#: model_terms:ir.ui.view,arch_db:beauty_salon.report_master_bonus_template
+msgid "to"
+msgstr "до"
