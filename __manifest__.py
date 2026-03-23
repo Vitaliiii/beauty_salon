@@ -23,7 +23,6 @@ This module perfectly demonstrates the use of key Odoo 19 framework technologies
     """,
     'author': 'Vitalii',
     'website': 'https://github.com/Vitaliiii',
-    'license': 'LGPL-3',
     'depends': [
         'base', 
         'mail',
@@ -32,8 +31,14 @@ This module perfectly demonstrates the use of key Odoo 19 framework technologies
     'data': [
         'security/beauty_security.xml',
         'security/ir.model.access.csv',
+        'data/ir_sequence_data.xml',
+        'views/partner_views.xml', 
         'views/beauty_views.xml',
-        'report/bonus_report.xml',
+        'wizard/bonus_report_wizard_views.xml',
+        'report/bonus_report_templates.xml',
+    ],
+    'demo': [
+        'data/beauty_demo_data.xml',
     ],
     'installable': True,
     'application': True,

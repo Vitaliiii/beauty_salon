@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_master_bonus" model="ir.actions.report">
+        <field name="name">Master Bonus Report</field>
+        <field name="model">beauty.bonus.report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">beauty_salon.report_master_bonus_template</field>
+        <field name="report_file">beauty_salon.report_master_bonus_template</field>
+        <field name="print_report_name">'Bonus_Report_%s' % (object.start_date)</field>
+    </record>
+
+    <template id="report_master_bonus_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2 class="text-center mt-4">Master Bonus Report</h2>
+                    <h4 class="text-center mb-4">
+                        From <span t-esc="start_date"/> to <span t-esc="end_date"/>
+                    </h4>
+
+                    <t t-foreach="masters_data" t-as="master">
+                        <div class="mt-4">
+                            <h3><span t-esc="master.name"/> (Bonus: <span t-esc="master.bonus_percentage"/>%)</h3>
+                            
+                            <table class="table table-sm table-bordered mt-2">
+                                <thead>
+                                    <tr class="bg-light">
+                                        <th>Date</th>
+                                        <th>Appointment #</th>
+                                        <th>Client</th>
+                                        <th class="text-end">Revenue</th>
+                                        <th class="text-end">Earned Bonus</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="masters_data[master]['appointments']" t-as="app">
+                                        <tr>
+                                            <td><span t-esc="app.datetime_start.strftime('%Y-%m-%d %H:%M')"/></td>
+                                            <td><span t-esc="app.name"/></td>
+                                            <td><span t-esc="app.client_id.name"/></td>
+                                            <td class="text-end"><span t-esc="app.total_amount" t-options='{"widget": "monetary", "display_currency": res_company.currency_id}'/></td>
+                                            <td class="text-end"><strong><span t-esc="app.master_bonus" t-options='{"widget": "monetary", "display_currency": res_company.currency_id}'/></strong></td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                            
+                            <div class="row">
+                                <div class="col-6 offset-6">
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <td><strong>Total Revenue Generated:</strong></td>
+                                            <td class="text-end"><span t-esc="masters_data[master]['total_revenue']" t-options='{"widget": "monetary", "display_currency": res_company.currency_id}'/></td>
+                                        </tr>
+                                        <tr class="table-success">
+                                            <td><strong>Total Bonus to Pay:</strong></td>
+                                            <td class="text-end"><strong><span t-esc="masters_data[master]['total_bonus']" t-options='{"widget": "monetary", "display_currency": res_company.currency_id}'/></strong></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="page-break-after:always;"></p>
+                    </t>
+                    
+                    <t t-if="not masters_data">
+                        <div class="alert alert-warning text-center">
+                            No completed appointments found for the selected period.
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>

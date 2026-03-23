@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_partner_form_inherit_beauty_salon" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.beauty.salon</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            
+            <xpath expr="//sheet/group" position="before">
+                <group>
+                    <group string="Salon Role">
+                        <field name="beauty_role" widget="radio" options="{'horizontal': true}"/>
+                        <field name="bonus_percentage" string="Commission %" invisible="beauty_role not in ('master', 'both')"/>
+                    </group>
+                </group>
+            </xpath>
+
+            <xpath expr="//notebook" position="inside">
+                
+                <page name="master_details" string="Master Analytics" invisible="not is_master">
+                    <group>
+                        <group string="Stylist Info">
+                            <field name="master_user_id" string="Connected User"/>
+                            <field name="specialty_ids" widget="many2many_tags" string="Services Provided"/>
+                        </group>
+                        <group string="Earnings">
+                            <field name="currency_id" invisible="1"/>
+                            <field name="earned_bonus" widget="monetary" string="Total Bonuses Earned" decoration-success="earned_bonus &gt; 0"/>
+                        </group>
+                    </group>
+                    
+                    <separator string="Recent Appointments"/>
+                    <field name="master_appointment_ids" readonly="1">
+                        <list limit="10"> 
+                            <field name="datetime_start" string="Date"/>
+                            <field name="client_id" string="Customer"/>
+                            <field name="total_amount" string="Revenue" widget="monetary"/>
+                            <field name="master_bonus" string="Your Bonus" widget="monetary" sum="Total Bonus"/>
+                            <field name="state" widget="badge"/>
+                            <field name="currency_id" column_invisible="True"/>
+                        </list>
+                    </field>
+                </page>
+
+                <page name="working_hours" string="Working Hours" invisible="not is_master">
+                    <field name="master_schedule_ids">
+                        <list editable="bottom">
+                            <field name="day_of_week"/>
+                            <field name="hour_from" widget="float_time"/>
+                            <field name="hour_to" widget="float_time"/>
+                        </list>
+                    </field>
+                </page>
+
+                <page name="reviews" string="Master Reviews" invisible="not is_master">
+                    <field name="review_ids" readonly="1">
+                        <list>
+                            <field name="create_date" string="Date"/>
+                            <field name="client_id"/>
+                            <field name="rating" widget="priority"/>
+                            <field name="comment"/>
+                        </list>
+                    </field>
+                </page>
+
+                <page name="client_details" string="Client History" invisible="not is_client">
+                    <group>
+                        <field name="last_visit_date" string="Last Time Seen"/>
+                    </group>
+                    <field name="client_appointment_ids" readonly="1">
+                        <list limit="15"> 
+                            <field name="datetime_start" string="Date"/>
+                            <field name="name" string="Order #"/>
+                            <field name="master_id" string="Stylist"/>
+                            <field name="state" widget="badge"/>
+                        </list>
+                    </field>
+                </page>
+
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_beauty_clients" model="ir.actions.act_window">
+        <field name="name">Customers</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[('is_client', '=', True)]</field>
+        <field name="context">{'default_beauty_role': 'client'}</field>
+    </record>
+
+    <record id="action_beauty_masters" model="ir.actions.act_window">
+        <field name="name">Team Masters</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[('is_master', '=', True)]</field>
+        <field name="context">{'default_beauty_role': 'master'}</field>
+    </record>
+
+    <menuitem id="menu_beauty_salon_root" name="Beauty Salon" sequence="10"/>
+    <menuitem id="menu_beauty_directories" name="Configuration" parent="menu_beauty_salon_root" sequence="100"/>
+    <menuitem id="menu_beauty_clients" name="Customers" parent="menu_beauty_salon_root" action="action_beauty_clients" sequence="15"/>
+    <menuitem id="menu_beauty_masters" name="Staff Masters" parent="menu_beauty_directories" action="action_beauty_masters" sequence="20"/>
+
+</odoo>

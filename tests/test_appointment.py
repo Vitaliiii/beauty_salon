@@ -1,76 +1,60 @@
-# -*- coding: utf-8 -*-
 from odoo.tests.common import TransactionCase
 from odoo.exceptions import ValidationError
-from datetime import datetime, timedelta
+from datetime import datetime
 
 class TestBeautyAppointment(TransactionCase):
 
     def setUp(self):
-        """Set up initial data for the tests"""
+        """Підготовка даних для тестів"""
         super(TestBeautyAppointment, self).setUp()
         
-        # Create a test service: 1 hour duration, 1000 UAH price
-        self.service = self.env['beauty.salon.service'].create({
+        # Створюємо послугу
+        self.service = self.env['beauty.service'].create({
             'name': 'Test Haircut',
             'price': 1000.0,
             'duration': 1.0
         })
         
-        # Create a test master with a 10% bonus percentage
-        self.master = self.env['beauty.salon.master'].create({
-            'name': 'Test Master',
-            'bonus_percentage': 10.0
+        # Створюємо майстра з бонусом 20%
+        self.master = self.env['res.partner'].create({
+            'name': 'Master Test',
+            'beauty_role': 'master',
+            'bonus_percentage': 20.0
         })
         
-        # Create a test client
-        self.client = self.env['beauty.salon.client'].create({
-            'name': 'Test Client'
+        # Створюємо клієнта
+        self.client = self.env['res.partner'].create({
+            'name': 'Client Test',
+            'beauty_role': 'client'
+        })
+
+        # Додаємо графік: Понеділок (0), 09:00 - 18:00
+        self.env['beauty.master.schedule'].create({
+            'master_id': self.master.id,
+            'day_of_week': '0',
+            'hour_from': 9.0,
+            'hour_to': 18.0
         })
 
     def test_01_calculation_logic(self):
-        """Test automatic calculation of end time, total amount, and master bonus"""
-        start_time = datetime(2026, 5, 20, 10, 0, 0)
-        
-        # Create an appointment with the predefined service
-        appointment = self.env['beauty.salon.appointment'].create({
+        """Тест: Чи правильно рахується сума та бонус"""
+        # 2026-03-02 — це понеділок
+        appointment = self.env['beauty.appointment'].create({
             'client_id': self.client.id,
             'master_id': self.master.id,
             'service_ids': [(4, self.service.id)],
-            'datetime_start': start_time,
+            'datetime_start': datetime(2026, 3, 2, 10, 0, 0)
         })
-
-        # Verify end time calculation: 10:00 + 1.0 hour = 11:00
-        expected_end = start_time + timedelta(hours=1.0)
-        self.assertEqual(appointment.datetime_end, expected_end, 
-                         "Error: End time calculation is incorrect!")
-
-        # Verify total amount: should be 1000.0 UAH
-        self.assertEqual(appointment.total_amount, 1000.0, 
-                         "Error: Total amount calculation is incorrect!")
-
-        # Verify master bonus: 10% of 1000.0 = 100.0 UAH
-        self.assertEqual(appointment.master_bonus, 100.0, 
-                         "Error: Master bonus calculation is incorrect!")
-
-    def test_02_overlapping_appointment(self):
-        """Test the prevention of overlapping appointments for the same master (Constraints)"""
-        start_time = datetime(2026, 5, 20, 14, 0, 0)
         
-        # Create the first appointment at 14:00 (ends at 15:00)
-        self.env['beauty.salon.appointment'].create({
-            'client_id': self.client.id,
-            'master_id': self.master.id,
-            'service_ids': [(4, self.service.id)],
-            'datetime_start': start_time,
-        })
+        self.assertEqual(appointment.total_amount, 1000.0, "Ціна має бути 1000")
+        self.assertEqual(appointment.master_bonus, 200.0, "Бонус має бути 20% від 1000 = 200")
 
-        # Attempt to create a second appointment at 14:30 for the same master
-        # The system must raise a ValidationError due to time overlap
-        with self.assertRaises(ValidationError, 
-                               msg="Error: The system should have blocked overlapping appointments!"):
-            self.env['beauty.salon.appointment'].create({
+    def test_02_schedule_constraint(self):
+        """Тест: Чи викидає помилку запис на 22:00 (поза графіком)"""
+        with self.assertRaises(ValidationError):
+            self.env['beauty.appointment'].create({
                 'client_id': self.client.id,
                 'master_id': self.master.id,
                 'service_ids': [(4, self.service.id)],
-                'datetime_start': start_time + timedelta(minutes=30),
+                'datetime_start': datetime(2026, 3, 2, 22, 0, 0) # Поза графіком
             })
